@@ -1,0 +1,1 @@
+Jadi ini udah coba dibuat basic model buat klasifikasi. Ntar mungkin bisa ditingkatin akurasinya dengan otak atik kode yang udah ada bisa dari manipulasi tranining data, ubah arsitektur model atau lainnya (gw juga jujur gak ingat apa aja yang diajarin di course soalnya wkwk). Ntar klo kalian mau ubah program jangan lupa bikin branch sendiri dulu yakk, semangat.

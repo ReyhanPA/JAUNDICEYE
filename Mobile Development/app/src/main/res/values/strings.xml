@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">JAUNDICEYE</string>
     <string name="title_home">Home</string>
-    <string name="title_article">Article</string>
-    <string name="title_recommendation">Recommendation</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_article">Artikel</string>
+    <string name="title_recommendation">Rekomendasi</string>
+    <string name="title_profile">Profil</string>
+    <string name="subheader_text">Default subheader text</string>
+    <string name="home_subheader_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
+    <string name="recommendation_subheader_text">Ikuti rekomendasi penanganan dan RS</string>
+    <string name="scanner_subheader_text">Ambil gambar mata untuk cek Jaundice</string>
+    <string name="article_subheader_text">Silakan baca artikel mengenai Jaundice</string>
+    <string name="profile_subheader_text">Profile saya</string>
+    <string name="home_toolbar_text">Jaundiceye</string>
+    <string name="recommendation_toolbar_text">Rekomendasi</string>
+    <string name="article_toolbar_text">Artikel</string>
+    <string name="profile_toolbar_text">Profil</string>
 </resources>

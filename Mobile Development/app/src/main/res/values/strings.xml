@@ -14,4 +14,8 @@
     <string name="recommendation_toolbar_text">Rekomendasi</string>
     <string name="article_toolbar_text">Artikel</string>
     <string name="profile_toolbar_text">Profil</string>
+    <string name="hospital_name">Rumah Sakit Default</string>
+    <string name="doctor_name">Dokter default</string>
+    <string name="hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="text_button_recommendation">Lihat</string>
 </resources>

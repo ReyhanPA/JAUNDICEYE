@@ -3,6 +3,7 @@ const cors = require("cors");
 const morgan = require("morgan");
 const serverConfig = require("./config/server-config");
 const db = require("./database/supabase");
+const articleApi = require("../components/article/article-api");
 
 class Application {
     constructor() {
@@ -15,6 +16,8 @@ class Application {
         this.express.use(cors());
         this.express.use(morgan("dev"));
         this.express.use(express.json());
+
+        this.express.use("/api/articles", articleApi);
 
         this.express.get("/api", (req, res) => {
             res.send("Welcome to JAUNDICE Backend Web Services!");

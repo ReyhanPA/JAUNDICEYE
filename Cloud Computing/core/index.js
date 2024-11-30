@@ -4,6 +4,8 @@ const morgan = require("morgan");
 const serverConfig = require("./config/server-config");
 const db = require("./database/supabase");
 const articleApi = require("../components/article/article-api");
+const hospitalApi = require("../components/hospital/hospital-api");
+const userApi = require("../components/user/user-api");
 
 class Application {
     constructor() {
@@ -18,6 +20,8 @@ class Application {
         this.express.use(express.json());
 
         this.express.use("/api/articles", articleApi);
+        this.express.use("/api/hospitals", hospitalApi);
+        this.express.use("/api/users", userApi);
 
         this.express.get("/api", (req, res) => {
             res.send("Welcome to JAUNDICE Backend Web Services!");

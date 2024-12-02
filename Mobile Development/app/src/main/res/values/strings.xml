@@ -1,21 +1,39 @@
 <resources>
     <string name="app_name">JAUNDICEYE</string>
-    <string name="title_home">Home</string>
-    <string name="title_article">Artikel</string>
-    <string name="title_recommendation">Rekomendasi</string>
-    <string name="title_profile">Profil</string>
-    <string name="subheader_text">Default subheader text</string>
-    <string name="home_subheader_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
-    <string name="recommendation_subheader_text">Ikuti rekomendasi penanganan dan RS</string>
-    <string name="scanner_subheader_text">Ambil gambar mata untuk cek Jaundice</string>
-    <string name="article_subheader_text">Silakan baca artikel mengenai Jaundice</string>
-    <string name="profile_subheader_text">Profile saya</string>
-    <string name="home_toolbar_text">Jaundiceye</string>
-    <string name="recommendation_toolbar_text">Rekomendasi</string>
-    <string name="article_toolbar_text">Artikel</string>
-    <string name="profile_toolbar_text">Profil</string>
-    <string name="hospital_name">Rumah Sakit Default</string>
-    <string name="doctor_name">Dokter default</string>
-    <string name="hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
-    <string name="text_button_recommendation">Lihat</string>
+    <!-- Navigation Item Title -->
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_article">Artikel</string>
+    <string name="nav_title_recommendation">Rekomendasi</string>
+    <string name="nav_title_profile">Profil</string>
+    <!-- Subheader Text -->
+    <string name="subheader_default_text">Default subheader text</string>
+    <string name="subheader_home_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
+    <string name="subheader_recommendation_text">Ikuti rekomendasi penanganan dan RS</string>
+    <string name="subheader_scanner_text">Ambil gambar mata untuk cek Jaundice</string>
+    <string name="subheader_article_text">Silakan baca artikel mengenai Jaundice</string>
+    <string name="subheader_profile_text">Profile saya</string>
+    <!-- Header Text -->
+    <string name="header_home_text">Jaundiceye</string>
+    <string name="header_recommendation_text">Rekomendasi</string>
+    <string name="header_scanner_text">Scanner</string>
+    <string name="header_article_text">Artikel</string>
+    <string name="header_profile_text">Profil</string>
+    <!-- Card Recommendation Default Text -->
+    <string name="default_hospital_name">Rumah Sakit Default</string>
+    <string name="default_doctor_name">Dokter default</string>
+    <string name="default_hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="default_text_button_recommendation">Lihat</string>
+    <!-- Content Description Text -->
+    <string name="description_toolbar_image">Toolbar image</string>
+    <string name="description_fab_scanner">Scanner</string>
+    <!-- Fragment Recommendation -->
+    <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
+    <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>
+    <!-- Card Article Default Text -->
+    <string name="default_article_title">Judul artikel default</string>
+    <string name="default_article_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</string>
+    <string name="default_text_button_article">Selengkapnya</string>
+    <!-- Fragment Scanner -->
+    <string name="default_text_button_scanner_camera">Kamera</string>
+    <string name="default_text_button_scanner_gallery">Galeri</string>
 </resources>

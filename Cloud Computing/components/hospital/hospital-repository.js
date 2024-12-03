@@ -2,13 +2,13 @@ const { createClient } = require('@supabase/supabase-js');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+const supabase = createClient(process.env.SUPABASE_PROJECT_URL, process.env.SUPABASE_API_KEY);
 
 // Get All Hospitals
-const getAll = async () => {
+const getAll = async() => {
     const { data, error } = await supabase
-        .from('hospital')
-        .select();
+        .from('hospitals')
+        .select('*');
     if (error) throw error;
     return data;
 }

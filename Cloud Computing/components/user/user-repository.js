@@ -1,27 +1,37 @@
-const User = require("./user");
+const { createClient } = require('@supabase/supabase-js');
+const dotenv = require('dotenv');
+dotenv.config();
 
-const createUser = async (userData) => {
-  try {
-    return await User.create(userData);
-  } catch (error) {
-    throw new Error(error.message);
-  }
+// Initialize Supabase client
+const supabase = createClient(process.env.SUPABASE_PROJECT_URL, process.env.SUPABASE_API_KEY);
+
+const createUser = async(userData) => {
+    try {
+        const { data, error } = await supabase.from('users').insert(userData).select();
+        if (error) throw new Error(error.message);
+        return data[0];
+    } catch (error) {
+        throw new Error(error.message);
+    }
 };
 
-const findUserByEmail = async (email) => {
-  try {
-    return await User.findOne({ where: { email } });
-  } catch (error) {
-    throw new Error(error.message);
-  }
+const findUserByUsername = async(username) => {
+    try {
+        const { data, error } = await supabase
+            .from('users')
+            .select('*')
+            .eq('username', username)
+            .single();
+
+        if (error && error.code === 'PGRST116') return null;
+
+        if (error) throw new Error(error.message);
+
+        return data;
+    } catch (error) {
+        throw new Error(error.message);
+    }
 };
 
-const findUserById = async (id) => {
-  try {
-    return await User.findByPk(id);
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
 
-module.exports = { createUser, findUserByEmail, findUserById };
+module.exports = { createUser, findUserByUsername };

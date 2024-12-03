@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.jaundiceye.databinding.FragmentArticleBinding
@@ -26,11 +25,6 @@ class ArticleFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val articleViewModel = ViewModelProvider(this)[ArticleViewModel::class.java]
-
-        val textView: TextView? = binding?.textArticle
-        articleViewModel.text.observe(viewLifecycleOwner) {
-            textView?.text = it
-        }
     }
 
     override fun onDestroyView() {

@@ -26,22 +26,30 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.navigation_home -> {
-                    binding.textSubheader.text = getString(R.string.home_subheader_text)
-                    binding.toolbarTitle.text = getString(R.string.home_toolbar_text)
+                    binding.subheaderText.text = getString(R.string.subheader_home_text)
+                    binding.toolbarTitle.text = getString(R.string.header_home_text)
                 }
                 R.id.navigation_recommendation -> {
-                    binding.textSubheader.text = getString(R.string.recommendation_subheader_text)
-                    binding.toolbarTitle.text = getString(R.string.recommendation_toolbar_text)
+                    binding.subheaderText.text = getString(R.string.subheader_recommendation_text)
+                    binding.toolbarTitle.text = getString(R.string.header_recommendation_text)
+                }
+                R.id.navigation_scanner -> {
+                    binding.subheaderText.text = getString(R.string.subheader_scanner_text)
+                    binding.toolbarTitle.text = getString(R.string.header_scanner_text)
                 }
                 R.id.navigation_article -> {
-                    binding.textSubheader.text = getString(R.string.article_subheader_text)
-                    binding.toolbarTitle.text = getString(R.string.article_toolbar_text)
+                    binding.subheaderText.text = getString(R.string.subheader_article_text)
+                    binding.toolbarTitle.text = getString(R.string.header_article_text)
                 }
                 R.id.navigation_profile -> {
-                    binding.textSubheader.text = getString(R.string.profile_subheader_text)
-                    binding.toolbarTitle.text = getString(R.string.profile_toolbar_text)
+                    binding.subheaderText.text = getString(R.string.subheader_profile_text)
+                    binding.toolbarTitle.text = getString(R.string.header_profile_text)
                 }
             }
+        }
+
+        binding.fabScanner.setOnClickListener {
+            navController.navigate(R.id.navigation_scanner)
         }
     }
 }

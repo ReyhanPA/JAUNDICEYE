@@ -18,11 +18,6 @@
         tools:layout="@layout/fragment_recommendation" />
 
     <fragment
-        android:id="@+id/navigation_scanner"
-        android:name="com.capstone.jaundiceye.ui.scanner.ScannerFragment"
-        tools:layout="@layout/fragment_scanner" />
-
-    <fragment
         android:id="@+id/navigation_article"
         android:name="com.capstone.jaundiceye.ui.article.ArticleFragment"
         android:label="@string/nav_title_article"

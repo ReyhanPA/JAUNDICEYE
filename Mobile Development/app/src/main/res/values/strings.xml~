@@ -41,5 +41,4 @@
     <string name="default_text_result">Negatif</string>
     <string name="default_text_result_jaundice">Penyakit Kuning</string>
     <string name="default_text_result_title">Hasil</string>
-    <string name="default_text_button_scanner_save">Simpan Hasil</string>
 </resources>

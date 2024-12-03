@@ -18,4 +18,18 @@
     <string name="doctor_name">Dokter default</string>
     <string name="hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
     <string name="text_button_recommendation">Lihat</string>
+    <string name="brand">JaundiceEye.</string>
+    <string name="welcomeMessage">Selamat Datang, Bobby!</string>
+    <string name="cekPenyakitKuning">Cek Penyakit Kuning</string>
+    <string name="subCekPenyakitKuning">Cek penyakit kuning kamu dengan AI</string>
+    <string name="btnCekPenyakitKuning">Coba Sekarang  ▶</string>
+    <string name="descCekPenyakitKuning">"Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera\n  • Mendapatkan hasil analisis dari AI"</string>
+    <string name="descArtikel">"Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan\n  • Filter artikel sesuai kemauan kamu"</string>
+    <string name="subRiwayat">Anda bisa melihat semua riwayat cek Anda</string>
+    <string name="riwayat">Riwayat Cek Penyakit Kuning</string>
+    <string name="btnRiwayat">Lihat Sekarang  ▶</string>
+    <string name="btnArtikel">Baca Sekarang ▶</string>
+    <string name="subArtikel">Silakan cek artikel mengenai kesehatan</string>
+    <string name="artikel">Artikel</string>
+
 </resources>

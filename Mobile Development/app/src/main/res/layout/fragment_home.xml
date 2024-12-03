@@ -94,9 +94,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btnCekPenyakitKuning"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/deep_blue"
+                android:background="@drawable/button_home"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -144,9 +147,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btnRiwayat"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/deep_blue"
+                android:background="@drawable/button_home"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -202,9 +208,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/btnArtikel"
                 android:textAllCaps="false"
-                android:backgroundTint="@color/deep_blue"
+                android:background="@drawable/button_home"
                 android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

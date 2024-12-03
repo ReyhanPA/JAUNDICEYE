@@ -42,13 +42,13 @@
     <string name="nav_title_profile">Profil</string>
     <!-- Subheader Text -->
     <string name="subheader_default_text">Default subheader text</string>
-    <string name="subheader_home_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
+    <string name="subheader_home_text">Cek penyakit dengan AI JaundicEye.</string>
     <string name="subheader_recommendation_text">Ikuti rekomendasi penanganan dan RS</string>
     <string name="subheader_scanner_text">Ambil gambar mata untuk cek Jaundice</string>
     <string name="subheader_article_text">Silakan baca artikel mengenai Jaundice</string>
     <string name="subheader_profile_text">Profile saya</string>
     <!-- Header Text -->
-    <string name="header_home_text">Jaundiceye</string>
+    <string name="header_home_text">JaundicEye.</string>
     <string name="header_recommendation_text">Rekomendasi</string>
     <string name="header_scanner_text">Scanner</string>
     <string name="header_article_text">Artikel</string>
@@ -80,4 +80,8 @@
     <string name="default_text_button_scanner_save">Simpan Hasil</string>
     <!-- Error Text -->
     <string name="error_no_image_selected">Masukkan gambar dahulu!</string>
+    <!-- Splashscreen Text -->
+    <string name="welcome_title">JaundicEye.</string>
+    <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
+    <string name="welcome_button_text">Get Started</string>
 </resources>

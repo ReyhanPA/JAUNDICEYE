@@ -1,11 +1,13 @@
-package com.capstone.jaundiceye.ui
+package com.capstone.jaundiceye.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.jaundiceye.R
 import com.capstone.jaundiceye.databinding.ActivityMainBinding
+import com.capstone.jaundiceye.ui.scanner.ScannerActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -33,10 +35,6 @@ class MainActivity : AppCompatActivity() {
                     binding.subheaderText.text = getString(R.string.subheader_recommendation_text)
                     binding.toolbarTitle.text = getString(R.string.header_recommendation_text)
                 }
-                R.id.navigation_scanner -> {
-                    binding.subheaderText.text = getString(R.string.subheader_scanner_text)
-                    binding.toolbarTitle.text = getString(R.string.header_scanner_text)
-                }
                 R.id.navigation_article -> {
                     binding.subheaderText.text = getString(R.string.subheader_article_text)
                     binding.toolbarTitle.text = getString(R.string.header_article_text)
@@ -49,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.fabScanner.setOnClickListener {
-            navController.navigate(R.id.navigation_scanner)
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
     }
 }

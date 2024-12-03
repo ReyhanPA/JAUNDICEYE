@@ -61,6 +61,8 @@
     <!-- Content Description Text -->
     <string name="description_toolbar_image">Toolbar image</string>
     <string name="description_fab_scanner">Scanner</string>
+    <string name="description_image_preview">IMage preview</string>
+    <string name="description_back">Kembali</string>
     <!-- Fragment Recommendation -->
     <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
     <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>
@@ -68,7 +70,14 @@
     <string name="default_article_title">Judul artikel default</string>
     <string name="default_article_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</string>
     <string name="default_text_button_article">Selengkapnya</string>
-    <!-- Fragment Scanner -->
+    <!-- Activity Scanner Default Text -->
     <string name="default_text_button_scanner_camera">Kamera</string>
     <string name="default_text_button_scanner_gallery">Galeri</string>
+    <string name="default_text_button_scanner_upload">Unggah</string>
+    <string name="default_text_result">Negatif</string>
+    <string name="default_text_result_jaundice">Penyakit Kuning</string>
+    <string name="default_text_result_title">Hasil</string>
+    <string name="default_text_button_scanner_save">Simpan Hasil</string>
+    <!-- Error Text -->
+    <string name="error_no_image_selected">Masukkan gambar dahulu!</string>
 </resources>

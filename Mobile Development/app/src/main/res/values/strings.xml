@@ -1,5 +1,40 @@
 <resources>
     <string name="app_name">JAUNDICEYE</string>
+    <string name="title_home">Home</string>
+    <string name="title_article">Artikel</string>
+    <string name="title_recommendation">Rekomendasi</string>
+    <string name="title_profile">Profil</string>
+    <string name="subheader_text">Default subheader text</string>
+    <string name="home_subheader_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
+    <string name="recommendation_subheader_text">Ikuti rekomendasi penanganan dan RS</string>
+    <string name="scanner_subheader_text">Ambil gambar mata untuk cek Jaundice</string>
+    <string name="article_subheader_text">Silakan baca artikel mengenai Jaundice</string>
+    <string name="profile_subheader_text">Profile saya</string>
+    <string name="home_toolbar_text">Jaundiceye</string>
+    <string name="recommendation_toolbar_text">Rekomendasi</string>
+    <string name="article_toolbar_text">Artikel</string>
+    <string name="profile_toolbar_text">Profil</string>
+    <string name="hospital_name">Rumah Sakit Default</string>
+    <string name="doctor_name">Dokter default</string>
+    <string name="hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="text_button_recommendation">Lihat</string>
+    <string name="brand">Jaundic<u>Eye</u>.</string>
+    <string name="welcomeMessage">Selamat Datang,\nBobby!</string>
+    <string name="cekPenyakitKuning">Cek Penyakit Kuning</string>
+    <string name="subCekPenyakitKuning">Cek penyakit kuning kamu dengan AI</string>
+    <string name="btnCekPenyakitKuning">Coba Sekarang  ▶</string>
+    <string name="descCekPenyakitKuning">"Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera\n  • Mendapatkan hasil analisis dari AI"</string>
+    <string name="descArtikel">"Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan\n  • Filter artikel sesuai kemauan kamu"</string>
+    <string name="subRiwayat">Anda bisa melihat semua riwayat cek Anda</string>
+    <string name="riwayat">Riwayat Cek Penyakit Kuning</string>
+    <string name="btnRiwayat">Lihat Sekarang  ▶</string>
+    <string name="btnArtikel">Baca Sekarang ▶</string>
+    <string name="subArtikel">Silakan cek artikel mengenai kesehatan</string>
+    <string name="artikel">Artikel</string>
+    <string name="cek_dengan_ai">
+        Cek penyakit dengan bantuan AI <b><font color="#002F6C">JaundicEye.</font></b>
+    </string>
+
     <!-- Navigation Item Title -->
     <string name="nav_title_home">Home</string>
     <string name="nav_title_article">Artikel</string>

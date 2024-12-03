@@ -27,10 +27,10 @@ class HomeFragment : Fragment() {
 
         val homeViewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
-        val textView: TextView? = binding?.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView?.text = it
-        }
+//        val textView: TextView? = binding?.textHome
+//        homeViewModel.text.observe(viewLifecycleOwner) {
+//            textView?.text = it
+//        }
     }
 
     override fun onDestroyView() {

@@ -1,11 +1,13 @@
-package com.capstone.jaundiceye.ui
+package com.capstone.jaundiceye.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.jaundiceye.R
 import com.capstone.jaundiceye.databinding.ActivityMainBinding
+import com.capstone.jaundiceye.ui.scanner.ScannerActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -28,39 +30,24 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_home -> {
                     binding.subheaderText.text = getString(R.string.subheader_home_text)
                     binding.toolbarTitle.text = getString(R.string.header_home_text)
-                    binding.navView.selectedItemId = R.id.navigation_home
                 }
                 R.id.navigation_recommendation -> {
                     binding.subheaderText.text = getString(R.string.subheader_recommendation_text)
                     binding.toolbarTitle.text = getString(R.string.header_recommendation_text)
-                    binding.navView.selectedItemId = R.id.navigation_recommendation
-                }
-                R.id.navigation_scanner -> {
-                    binding.subheaderText.text = getString(R.string.subheader_scanner_text)
-                    binding.toolbarTitle.text = getString(R.string.header_scanner_text)
-                    // Pastikan bahwa tidak ada item yang dipilih di BottomNavigationView saat berada di Scanner
-                    binding.navView.selectedItemId = -1
                 }
                 R.id.navigation_article -> {
                     binding.subheaderText.text = getString(R.string.subheader_article_text)
                     binding.toolbarTitle.text = getString(R.string.header_article_text)
-                    binding.navView.selectedItemId = R.id.navigation_article
                 }
                 R.id.navigation_profile -> {
                     binding.subheaderText.text = getString(R.string.subheader_profile_text)
                     binding.toolbarTitle.text = getString(R.string.header_profile_text)
-                    binding.navView.selectedItemId = R.id.navigation_profile
                 }
             }
         }
 
-
         binding.fabScanner.setOnClickListener {
-            // Nonaktifkan item yang sedang aktif pada BottomNavigationView
-            binding.navView.selectedItemId = -1
-
-            // Navigasi ke fragment Scanner
-            navController.navigate(R.id.navigation_scanner)
+            startActivity(Intent(this, ScannerActivity::class.java))
         }
     }
 }

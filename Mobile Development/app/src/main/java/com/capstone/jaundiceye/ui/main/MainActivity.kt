@@ -1,8 +1,16 @@
 package com.capstone.jaundiceye.ui.main
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.TypefaceSpan
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.jaundiceye.R
@@ -28,7 +36,40 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.navigation_home -> {
-                    binding.subheaderText.text = getString(R.string.subheader_home_text)
+                    val fullText = getString(R.string.subheader_home_text)
+                    val spannable = SpannableString(fullText)
+                    val keyword = "JaundicEye."
+
+                    val startIndex = fullText.indexOf(keyword)
+                    val endIndex = startIndex + keyword.length
+
+                    if (startIndex != -1) {
+                        spannable.setSpan(
+                            ForegroundColorSpan(ContextCompat.getColor(this, R.color.deep_blue)),
+                            startIndex,
+                            endIndex,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+
+                        spannable.setSpan(
+                            RelativeSizeSpan(1.2f),
+                            startIndex,
+                            endIndex,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+
+                        val typeface = ResourcesCompat.getFont(this, R.font.abril_fatface_regular)
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                            spannable.setSpan(
+                                typeface?.let { TypefaceSpan(it) },
+                                startIndex,
+                                endIndex,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                        }
+                    }
+
+                    binding.subheaderText.text = spannable
                     binding.toolbarTitle.text = getString(R.string.header_home_text)
                 }
                 R.id.navigation_recommendation -> {
@@ -47,7 +88,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.fabScanner.setOnClickListener {
-            startActivity(Intent(this, ScannerActivity::class.java))
+            val intent = Intent(this, ScannerActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -20,6 +20,9 @@
         android:theme="@style/Theme.JAUNDICEYE"
         tools:targetApi="31">
         <activity
+            android:name=".ui.welcome.WelcomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.scanner.ScannerActivity"
             android:exported="false" />
         <activity

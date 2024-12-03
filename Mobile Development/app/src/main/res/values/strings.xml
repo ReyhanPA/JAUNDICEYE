@@ -27,6 +27,7 @@
     <string name="description_toolbar_image">Toolbar image</string>
     <string name="description_fab_scanner">Scanner</string>
     <string name="description_image_preview">IMage preview</string>
+    <string name="description_back">Kembali</string>
     <!-- Fragment Recommendation -->
     <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
     <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>
@@ -42,4 +43,6 @@
     <string name="default_text_result_jaundice">Penyakit Kuning</string>
     <string name="default_text_result_title">Hasil</string>
     <string name="default_text_button_scanner_save">Simpan Hasil</string>
+    <!-- Error Text -->
+    <string name="error_no_image_selected">Masukkan gambar dahulu!</string>
 </resources>

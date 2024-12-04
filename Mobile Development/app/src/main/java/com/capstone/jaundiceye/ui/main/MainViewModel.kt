@@ -1,16 +1,18 @@
-package com.capstone.jaundiceye.ui.profile
+package com.capstone.jaundiceye.ui.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
 import com.capstone.jaundiceye.data.pref.UserModel
-import com.capstone.jaundiceye.repositories.UserRepository
+import com.capstone.jaundiceye.data.remote.responses.HospitalsResponse
+import com.capstone.jaundiceye.repositories.HospitalsRepository
 import com.capstone.jaundiceye.util.Event
-import kotlinx.coroutines.launch
 
-class ProfileViewModel(private val repository: UserRepository) : ViewModel() {
+class MainViewModel(private val repository: HospitalsRepository) : ViewModel() {
+    private val _hospitals = MutableLiveData<HospitalsResponse>()
+    val hospitals: LiveData<HospitalsResponse> = _hospitals
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -19,11 +21,5 @@ class ProfileViewModel(private val repository: UserRepository) : ViewModel() {
 
     fun getSession(): LiveData<UserModel> {
         return repository.getSession().asLiveData()
-    }
-
-    fun logout() {
-        viewModelScope.launch {
-            repository.logout()
-        }
     }
 }

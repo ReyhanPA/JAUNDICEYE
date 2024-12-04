@@ -9,7 +9,7 @@ const supabase = createClient(process.env.SUPABASE_PROJECT_URL, process.env.SUPA
 const getAll = async() => {
     const { data, error } = await supabase
         .from('article')
-        .select('id, title, description, link'); // Memastikan kita hanya mengambil kolom yang relevan
+        .select('*');
     if (error) throw error;
     return data;
 };
@@ -18,7 +18,7 @@ const getAll = async() => {
 const getById = async(id) => {
     const { data, error } = await supabase
         .from('article')
-        .select('id, title, description, link') // Memastikan kita hanya mengambil kolom yang relevan
+        .select('*')
         .eq('id', id)
         .single(); // Mengambil hanya satu artikel
     if (error) throw error;

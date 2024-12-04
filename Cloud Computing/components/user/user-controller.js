@@ -1,5 +1,5 @@
 const { createUser, findUserByUsername } = require("./user-repository");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { v4: uuidv4 } = require("uuid");
 
@@ -23,7 +23,7 @@ const signup = async(req, res) => {
         const userId = uuidv4();
 
         // Hash password
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hashSync(password, 10);
 
         // Save user
         const newUser = await createUser({
@@ -68,7 +68,7 @@ const login = async(req, res) => {
         }
 
         // Check password
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compareSync(password, user.password);
         if (!isMatch) {
             return res.status(401).json({ success: false, message: "Invalid credentials" });
         }

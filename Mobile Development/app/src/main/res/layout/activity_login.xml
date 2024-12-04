@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    tools:context=".ui.authentication.LoginActivity">
+
+        <!-- Judul -->
+        <TextView
+            android:id="@+id/tvLoginTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/log_in_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/deep_blue"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Field Email / Username -->
+        <EditText
+            android:id="@+id/etEmailUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email_username"
+            android:padding="12dp"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="8dp"
+            android:inputType="textEmailAddress" />
+
+        <!-- Field Kata Sandi -->
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_kata_sandi"
+            android:padding="12dp"
+            android:drawableLeft="@drawable/ic_password"
+            android:drawableRight="@drawable/ic_eye"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="16dp"
+            android:inputType="textPassword" />
+
+        <!-- Tautan ke Sign Up -->
+        <TextView
+            android:id="@+id/tvSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/belum_punya_akun_sign_up"
+            android:textColor="@color/deep_blue"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="14sp" />
+
+        <!-- Tombol Log In -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_log_in"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/deep_blue"
+            android:textColor="@color/white"
+            android:padding="12dp"
+            android:layout_marginTop="16dp" />
+
+</LinearLayout>

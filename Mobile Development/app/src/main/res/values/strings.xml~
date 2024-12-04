@@ -63,7 +63,6 @@
     <string name="description_fab_scanner">Scanner</string>
     <string name="description_image_preview">IMage preview</string>
     <string name="description_back">Kembali</string>
-    <string name="description_splashscreen">Splashscreen</string>
     <!-- Fragment Recommendation -->
     <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
     <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>

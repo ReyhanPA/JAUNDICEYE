@@ -44,7 +44,6 @@
         <activity
             android:name=".ui.authentication.RegisterActivity"
             android:exported="false" />
-        <activity
     </application>
 
 </manifest>

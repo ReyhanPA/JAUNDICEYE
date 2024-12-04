@@ -6,6 +6,7 @@ const db = require("./database/supabase");
 const articleApi = require("../components/article/article-api");
 const hospitalApi = require("../components/hospital/hospital-api");
 const userApi = require("../components/user/user-api");
+const { authMiddleware } = require("../middlewares/auth-middleware");
 
 class Application {
     constructor() {
@@ -19,9 +20,9 @@ class Application {
         this.express.use(morgan("dev"));
         this.express.use(express.json());
 
-        this.express.use("/api/articles", articleApi);
-        this.express.use("/api/hospitals", hospitalApi);
         this.express.use("/api/users", userApi);
+        this.express.use("/api/articles", authMiddleware, articleApi);
+        this.express.use("/api/hospitals", authMiddleware, hospitalApi);
 
         this.express.get("/api", (req, res) => {
             res.send("Welcome to JAUNDICE Backend Web Services!");

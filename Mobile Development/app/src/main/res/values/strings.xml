@@ -85,4 +85,14 @@
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
     <string name="welcome_button_text">Get Started</string>
+    <string name="log_in_title">Log In</string>
+    <string name="hint_email_username">Email / Username</string>
+    <string name="hint_kata_sandi">Kata Sandi</string>
+    <string name="belum_punya_akun_sign_up">Belum punya akun? Sign Up</string>
+    <string name="btn_log_in">Log In</string>
+    <string name="sign_up_title">Sign Up</string>
+    <string name="hint_name">Nama</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_konfirm_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="hint_email">Email</string>
 </resources>

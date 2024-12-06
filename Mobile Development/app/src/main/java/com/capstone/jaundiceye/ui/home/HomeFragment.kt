@@ -1,5 +1,7 @@
 package com.capstone.jaundiceye.ui.home
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,6 +24,8 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        playAnimation()
+
         binding?.apply {
             buttonHomeToScanner.setOnClickListener {
                 val intent = Intent(requireActivity(), ScannerActivity::class.java)
@@ -30,6 +34,19 @@ class HomeFragment : Fragment() {
             buttonHomeToArtikel.setOnClickListener {
             }
         }
+    }
+
+    private fun playAnimation() {
+        val toScanner = ObjectAnimator.ofFloat(binding?.cardCheck, View.ALPHA, 1f).setDuration(100)
+        val toArticle = ObjectAnimator.ofFloat(binding?.cardArtikel, View.ALPHA, 1f).setDuration(100)
+
+        AnimatorSet().apply {
+            playSequentially(
+                toScanner,
+                toArticle
+            )
+            startDelay = 100
+        }.start()
     }
 
     override fun onDestroyView() {

@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.jaundiceye.databinding.ActivityWelcomeBinding
-import com.capstone.jaundiceye.ui.main.MainActivity
+import com.capstone.jaundiceye.ui.authentication.LoginActivity
+import com.capstone.jaundiceye.ui.authentication.RegisterActivity
 
 class WelcomeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWelcomeBinding
@@ -15,9 +16,15 @@ class WelcomeActivity : AppCompatActivity() {
         binding = ActivityWelcomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.buttonWelcome.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        binding.apply {
+            buttonLogin.setOnClickListener {
+                val intent = Intent(this@WelcomeActivity, LoginActivity::class.java)
+                startActivity(intent)
+            }
+            buttonRegister.setOnClickListener {
+                val intent = Intent(this@WelcomeActivity, RegisterActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

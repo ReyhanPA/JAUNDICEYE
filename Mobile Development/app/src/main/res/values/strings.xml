@@ -63,6 +63,7 @@
     <string name="description_fab_scanner">Scanner</string>
     <string name="description_image_preview">IMage preview</string>
     <string name="description_back">Kembali</string>
+    <string name="description_splashscreen">Splashscreen</string>
     <!-- Fragment Recommendation -->
     <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
     <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>
@@ -78,12 +79,17 @@
     <string name="default_text_result_jaundice">Penyakit Kuning</string>
     <string name="default_text_result_title">Hasil</string>
     <string name="default_text_button_scanner_save">Simpan Hasil</string>
-    <!-- Error Text -->
+    <!-- Response Text -->
     <string name="error_no_image_selected">Masukkan gambar dahulu!</string>
-    <!-- Splashscreen Text -->
+    <string name="register_success_message">Register success!</string>
+    <string name="register_failed_message">Register failed!</string>
+    <string name="login_success_message">Login success!</string>
+    <string name="login_failed_message">Login failed!</string>
+    <!-- Welcome Text -->
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
-    <string name="welcome_button_text">Get Started</string>
+    <string name="welcome_button_login_text">Login</string>
+    <string name="welcome_button_register_text">Register</string>
     <string name="log_in_title">Log In</string>
     <string name="hint_username">Username</string>
     <string name="hint_kata_sandi">Kata Sandi</string>

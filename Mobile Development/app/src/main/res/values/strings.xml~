@@ -1,0 +1,104 @@
+<resources>
+    <string name="app_name">JAUNDICEYE</string>
+    <string name="title_home">Home</string>
+    <string name="title_article">Artikel</string>
+    <string name="title_recommendation">Rekomendasi</string>
+    <string name="title_profile">Profil</string>
+    <string name="subheader_text">Default subheader text</string>
+    <string name="home_subheader_text">Cek penyakit dengan bantuan AI Jaundiceye</string>
+    <string name="recommendation_subheader_text">Ikuti rekomendasi penanganan dan RS</string>
+    <string name="scanner_subheader_text">Ambil gambar mata untuk cek Jaundice</string>
+    <string name="article_subheader_text">Silakan baca artikel mengenai Jaundice</string>
+    <string name="profile_subheader_text">Profile saya</string>
+    <string name="home_toolbar_text">Jaundiceye</string>
+    <string name="recommendation_toolbar_text">Rekomendasi</string>
+    <string name="article_toolbar_text">Artikel</string>
+    <string name="profile_toolbar_text">Profil</string>
+    <string name="hospital_name">Rumah Sakit Default</string>
+    <string name="doctor_name">Dokter default</string>
+    <string name="hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="text_button_recommendation">Lihat</string>
+    <string name="brand">Jaundic<u>Eye</u>.</string>
+    <string name="welcomeMessage">Selamat Datang,\nBobby!</string>
+    <string name="cekPenyakitKuning">Cek Penyakit Kuning</string>
+    <string name="subCekPenyakitKuning">Cek penyakit kuning kamu dengan AI</string>
+    <string name="btnCekPenyakitKuning">Coba Sekarang  ▶</string>
+    <string name="descCekPenyakitKuning">"Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera\n  • Mendapatkan hasil analisis dari AI"</string>
+    <string name="descArtikel">"Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan\n  • Filter artikel sesuai kemauan kamu"</string>
+    <string name="subRiwayat">Anda bisa melihat semua riwayat cek Anda</string>
+    <string name="riwayat">Riwayat Cek Penyakit Kuning</string>
+    <string name="btnRiwayat">Lihat Sekarang  ▶</string>
+    <string name="btnArtikel">Baca Sekarang ▶</string>
+    <string name="subArtikel">Silakan cek artikel mengenai kesehatan</string>
+    <string name="artikel">Artikel</string>
+    <string name="cek_dengan_ai">
+        Cek penyakit dengan bantuan AI <b><font color="#002F6C">JaundicEye.</font></b>
+    </string>
+
+    <!-- Navigation Item Title -->
+    <string name="nav_title_home">Home</string>
+    <string name="nav_title_article">Artikel</string>
+    <string name="nav_title_recommendation">Rekomendasi</string>
+    <string name="nav_title_profile">Profil</string>
+    <!-- Subheader Text -->
+    <string name="subheader_default_text">Default subheader text</string>
+    <string name="subheader_home_text">Cek penyakit dengan AI JaundicEye.</string>
+    <string name="subheader_recommendation_text">Ikuti rekomendasi penanganan dan RS</string>
+    <string name="subheader_scanner_text">Ambil gambar mata untuk cek Jaundice</string>
+    <string name="subheader_article_text">Silakan baca artikel mengenai Jaundice</string>
+    <string name="subheader_profile_text">Profile saya</string>
+    <!-- Header Text -->
+    <string name="header_home_text">JaundicEye.</string>
+    <string name="header_recommendation_text">Rekomendasi</string>
+    <string name="header_scanner_text">Scanner</string>
+    <string name="header_article_text">Artikel</string>
+    <string name="header_profile_text">Profil</string>
+    <!-- Card Recommendation Default Text -->
+    <string name="default_hospital_name">Rumah Sakit Default</string>
+    <string name="default_doctor_name">Dokter default</string>
+    <string name="default_hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="default_text_button_recommendation">Lihat</string>
+    <!-- Content Description Text -->
+    <string name="description_toolbar_image">Toolbar image</string>
+    <string name="description_fab_scanner">Scanner</string>
+    <string name="description_image_preview">IMage preview</string>
+    <string name="description_back">Kembali</string>
+    <string name="description_splashscreen">Splashscreen</string>
+    <!-- Fragment Recommendation -->
+    <string name="title_recommendation_fragment">Rumah Sakit Terdekat</string>
+    <string name="text_recommendation">Lihat langkah penanganan penyakit kuning</string>
+    <!-- Card Article Default Text -->
+    <string name="default_article_title">Judul artikel default</string>
+    <string name="default_article_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</string>
+    <string name="default_text_button_article">Selengkapnya</string>
+    <!-- Activity Scanner Default Text -->
+    <string name="default_text_button_scanner_camera">Kamera</string>
+    <string name="default_text_button_scanner_gallery">Galeri</string>
+    <string name="default_text_button_scanner_upload">Unggah</string>
+    <string name="default_text_result">Negatif</string>
+    <string name="default_text_result_jaundice">Penyakit Kuning</string>
+    <string name="default_text_result_title">Hasil</string>
+    <string name="default_text_button_scanner_save">Simpan Hasil</string>
+    <!-- Response Text -->
+    <string name="error_no_image_selected">Masukkan gambar dahulu!</string>
+    <string name="register_success_message">Register success!</string>
+    <string name="register_failed_message">Register failed!</string>
+    <string name="login_success_message">Login success!</string>
+    <string name="login_failed_message">Login failed!</string>
+    <string name="username_password_required">Isi username dan password dahulu!</string>
+    <!-- Welcome Text -->
+    <string name="welcome_title">JaundicEye.</string>
+    <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
+    <string name="welcome_button_login_text">Login</string>
+    <string name="welcome_button_register_text">Register</string>
+    <string name="log_in_title">Log In</string>
+    <string name="hint_email_username">Email / Username</string>
+    <string name="hint_kata_sandi">Kata Sandi</string>
+    <string name="belum_punya_akun_sign_up">Belum punya akun? Sign Up</string>
+    <string name="btn_log_in">Log In</string>
+    <string name="sign_up_title">Sign Up</string>
+    <string name="hint_name">Nama</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_konfirm_kata_sandi">Konfirmasi Kata Sandi</string>
+    <string name="hint_email">Email</string>
+</resources>

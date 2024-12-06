@@ -92,13 +92,17 @@
     <string name="welcome_button_login_text">Login</string>
     <string name="welcome_button_register_text">Register</string>
     <string name="log_in_title">Log In</string>
-    <string name="hint_email_username">Email / Username</string>
+    <string name="hint_username">Username</string>
     <string name="hint_kata_sandi">Kata Sandi</string>
     <string name="belum_punya_akun_sign_up">Belum punya akun? Sign Up</string>
+    <string name="sudah_punya_akun_log_in">Sudah punya akun? Log In</string>
     <string name="btn_log_in">Log In</string>
     <string name="sign_up_title">Sign Up</string>
     <string name="hint_name">Nama</string>
-    <string name="hint_username">Username</string>
     <string name="hint_konfirm_kata_sandi">Konfirmasi Kata Sandi</string>
     <string name="hint_email">Email</string>
+    <string name="profile_name">Bobby Richman</string>
+    <string name="btn_editProfile">Edit Profil</string>
+    <string name="btn_exit">Keluar</string>
+    <string name="btn_signUp">Sign Up</string>
 </resources>

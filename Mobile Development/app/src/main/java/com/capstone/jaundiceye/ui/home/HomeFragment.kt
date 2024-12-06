@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.capstone.jaundiceye.R
 import com.capstone.jaundiceye.databinding.FragmentHomeBinding
+import com.capstone.jaundiceye.ui.history.HistoryActivity
 import com.capstone.jaundiceye.ui.scanner.ScannerActivity
 
 class HomeFragment : Fragment() {
@@ -31,18 +34,25 @@ class HomeFragment : Fragment() {
                 val intent = Intent(requireActivity(), ScannerActivity::class.java)
                 startActivity(intent)
             }
+            buttonHomeToHistory.setOnClickListener {
+                val intent = Intent(requireActivity(), HistoryActivity::class.java)
+                startActivity(intent)
+            }
             buttonHomeToArtikel.setOnClickListener {
+                Toast.makeText(requireActivity(), resources.getString(R.string.go_to_tab_article), Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun playAnimation() {
         val toScanner = ObjectAnimator.ofFloat(binding?.cardCheck, View.ALPHA, 1f).setDuration(100)
+        val toHistory = ObjectAnimator.ofFloat(binding?.cardHistory, View.ALPHA, 1f).setDuration(100)
         val toArticle = ObjectAnimator.ofFloat(binding?.cardArtikel, View.ALPHA, 1f).setDuration(100)
 
         AnimatorSet().apply {
             playSequentially(
                 toScanner,
+                toHistory,
                 toArticle
             )
             startDelay = 100

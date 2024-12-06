@@ -20,6 +20,12 @@
         android:theme="@style/Theme.JAUNDICEYE"
         tools:targetApi="31">
         <activity
+            android:name=".ui.handlingsteps.HandlingstepsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.history.HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splashscreen.SplashscreenActivity"
             android:exported="true">
             <intent-filter>
@@ -31,7 +37,7 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="false" />

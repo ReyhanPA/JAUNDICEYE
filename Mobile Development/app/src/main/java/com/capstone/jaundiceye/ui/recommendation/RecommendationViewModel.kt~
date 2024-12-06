@@ -6,13 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.capstone.jaundiceye.data.pref.UserModel
+import com.capstone.jaundiceye.data.remote.responses.HospitalsResponse
 import com.capstone.jaundiceye.data.remote.responses.HospitalsResponseItem
 import com.capstone.jaundiceye.repositories.HospitalsRepository
 import com.capstone.jaundiceye.util.Event
 import kotlinx.coroutines.launch
 
 class RecommendationViewModel(private val repository: HospitalsRepository) : ViewModel() {
-    private val _hospitals = MutableLiveData<List<HospitalsResponseItem>>()
+    private val _hospitals = MutableLiveData<List<HospitalsResponseItem>>() // Perubahan di sini
     val hospitals: LiveData<List<HospitalsResponseItem>> = _hospitals
 
     private val _isLoading = MutableLiveData<Boolean>()

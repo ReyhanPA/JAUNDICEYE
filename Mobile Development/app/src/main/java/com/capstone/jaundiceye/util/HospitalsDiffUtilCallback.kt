@@ -5,7 +5,7 @@ import com.capstone.jaundiceye.data.remote.responses.HospitalsResponseItem
 
 object HospitalsDiffUtilCallback : DiffUtil.ItemCallback<HospitalsResponseItem>() {
     override fun areItemsTheSame(oldItem: HospitalsResponseItem, newItem: HospitalsResponseItem): Boolean {
-        return oldItem == newItem
+        return oldItem.id == newItem.id
     }
 
     override fun areContentsTheSame(oldItem: HospitalsResponseItem, newItem: HospitalsResponseItem): Boolean {

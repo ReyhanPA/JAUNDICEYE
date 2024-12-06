@@ -23,8 +23,8 @@
     <string name="cekPenyakitKuning">Cek Penyakit Kuning</string>
     <string name="subCekPenyakitKuning">Cek penyakit kuning kamu dengan AI</string>
     <string name="btnCekPenyakitKuning">Coba Sekarang  ▶</string>
-    <string name="descCekPenyakitKuning">"Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera\n  • Mendapatkan hasil analisis dari AI"</string>
-    <string name="descArtikel">"Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan\n  • Filter artikel sesuai kemauan kamu"</string>
+    <string name="descCekPenyakitKuning">Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera dan galeri\n  • Mendapatkan hasil analisis dari AI</string>
+    <string name="descArtikel">Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan</string>
     <string name="subRiwayat">Anda bisa melihat semua riwayat cek Anda</string>
     <string name="riwayat">Riwayat Cek Penyakit Kuning</string>
     <string name="btnRiwayat">Lihat Sekarang  ▶</string>
@@ -96,6 +96,7 @@
     <!-- Profile Fragment -->
     <string name="hint_username">Username</string>
     <string name="hint_kata_sandi">Kata Sandi</string>
+    <!-- Other Text -->
     <string name="belum_punya_akun_sign_up">Belum punya akun?</string>
     <string name="sudah_punya_akun_log_in">Sudah punya akun?</string>
     <string name="btn_log_in">Log In</string>

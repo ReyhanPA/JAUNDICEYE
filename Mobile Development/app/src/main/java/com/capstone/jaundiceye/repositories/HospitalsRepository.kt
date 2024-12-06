@@ -2,6 +2,7 @@ package com.capstone.jaundiceye.repositories
 
 import com.capstone.jaundiceye.data.pref.UserModel
 import com.capstone.jaundiceye.data.pref.UserPreference
+import com.capstone.jaundiceye.data.remote.responses.HospitalsResponseItem
 import com.capstone.jaundiceye.data.remote.retrofit.ApiService
 import kotlinx.coroutines.flow.Flow
 
@@ -14,19 +15,13 @@ class HospitalsRepository private constructor(
         return userPreference.getSession()
     }
 
-    suspend fun logout() {
-        userPreference.logout()
+    suspend fun getHospitals(): List<HospitalsResponseItem> {
+        return apiService.getHospitals()
     }
 
     companion object {
         @Volatile
-        private var instance: HospitalsRepository? = null
-        fun getInstance(
-            userPreference: UserPreference,
-            apiService: ApiService
-        ): HospitalsRepository =
-            instance ?: synchronized(this) {
-                instance ?: HospitalsRepository(userPreference, apiService)
-            }.also { instance = it }
+        private var instance: Repository? = null
+        fun getInstance(userPref: UserPreference, apiService: ApiService) = HospitalsRepository(userPref, apiService)
     }
 }

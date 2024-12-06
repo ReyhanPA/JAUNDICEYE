@@ -2,6 +2,7 @@ package com.capstone.jaundiceye.data.remote.retrofit
 
 import com.capstone.jaundiceye.data.remote.request.LoginRequest
 import com.capstone.jaundiceye.data.remote.request.SignupRequest
+import com.capstone.jaundiceye.data.remote.responses.ArticlesResponseItem
 import com.capstone.jaundiceye.data.remote.responses.HospitalsResponseItem
 import com.capstone.jaundiceye.data.remote.responses.LoginResponse
 import com.capstone.jaundiceye.data.remote.responses.SignupResponse
@@ -23,4 +24,7 @@ interface ApiService {
 
     @GET("hospitals")
     suspend fun getHospitals(): List<HospitalsResponseItem>
+
+    @GET("articles")
+    suspend fun getArticles(): List<ArticlesResponseItem>
 }

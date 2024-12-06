@@ -80,13 +80,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/mobile_navigation"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_recommendation"/>
 
     <!-- Bottom Navigation View -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="76dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="0dp"
         android:paddingTop="12dp"

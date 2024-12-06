@@ -1,16 +1,9 @@
 package com.capstone.jaundiceye.ui.authentication
 
 import android.content.Intent
-import android.text.SpannableString
-import android.text.Spanned
-import android.text.TextPaint
-import android.text.method.LinkMovementMethod
-import android.text.style.ClickableSpan
-import android.view.View
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -36,39 +29,9 @@ class RegisterActivity : AppCompatActivity() {
         setupAction()
 //        playAnimation()
 
-//        viewModel.isLoading.observe(this) {
-//            showLoading(it)
-//        }
-//KODE BUAT LOG IN NYA BIAR JADI BUTTON
-        val signUpText = findViewById<TextView>(R.id.tvSignUp)
-
-        // Kalimat lengkap
-        val text = "Sudah punya akun? Log In"
-
-        // Membuat SpannableString
-        val spannableString = SpannableString(text)
-
-        // Menentukan klik pada bagian "Sign Up"
-        val clickableSpan = object : ClickableSpan() {
-            override fun onClick(widget: View) {
-                // Intent ke halaman Register
-                val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
-                startActivity(intent)
-            }
-
-            override fun updateDrawState(ds: TextPaint) {
-                super.updateDrawState(ds)
-                // Menjaga agar underline tidak muncul
-                ds.isUnderlineText = false
-            }
+        viewModel.isLoading.observe(this) {
+            showLoading(it)
         }
-
-        // Memberi span pada kata "Log In" (posisi mulai dan akhir teks)
-        spannableString.setSpan(clickableSpan, 17, text.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-
-        // Menetapkan teks dan mengaktifkan LinkMovementMethod
-        signUpText.text = spannableString
-        signUpText.movementMethod = LinkMovementMethod.getInstance()
     }
 
     private fun setupView() {
@@ -81,9 +44,14 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text.toString()
-            val password = binding.etPassword.text.toString()
+        binding.tvLogin.setOnClickListener {
+            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        binding.btnSignup.setOnClickListener {
+            val username = binding.inputUsername.text.toString()
+            val password = binding.inputPassword.text.toString()
 
             viewModel.signup(username, password).observe(this) { signupResponse ->
                 val message = signupResponse.message
@@ -141,8 +109,8 @@ class RegisterActivity : AppCompatActivity() {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
-//    private fun showLoading(state: Boolean) {
-//        binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE
-//        binding.btnLogin.isEnabled = !state
-//    }
+    private fun showLoading(state: Boolean) {
+        binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE
+        binding.btnSignup.isEnabled = !state
+    }
 }

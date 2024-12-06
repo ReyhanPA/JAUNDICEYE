@@ -9,7 +9,13 @@
         android:id="@+id/navigation_home"
         android:name="com.capstone.jaundiceye.ui.home.HomeFragment"
         android:label="@string/nav_title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_article"
+            app:destination="@id/navigation_article"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="false"/>
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_recommendation"
@@ -21,7 +27,11 @@
         android:id="@+id/navigation_article"
         android:name="com.capstone.jaundiceye.ui.article.ArticleFragment"
         android:label="@string/nav_title_article"
-        tools:layout="@layout/fragment_article" />
+        tools:layout="@layout/fragment_article" >
+        <action
+            android:id="@+id/action_navigation_article_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"

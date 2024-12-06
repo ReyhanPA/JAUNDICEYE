@@ -3,6 +3,7 @@ package com.capstone.jaundiceye.repositories
 import com.capstone.jaundiceye.data.pref.UserModel
 import com.capstone.jaundiceye.data.pref.UserPreference
 import com.capstone.jaundiceye.data.remote.request.LoginRequest
+import com.capstone.jaundiceye.data.remote.request.SignupRequest
 import com.capstone.jaundiceye.data.remote.responses.LoginResponse
 import com.capstone.jaundiceye.data.remote.responses.SignupResponse
 import com.capstone.jaundiceye.data.remote.retrofit.ApiService
@@ -22,7 +23,8 @@ class UserRepository private constructor(
     }
 
     suspend fun signup(username: String, password: String): SignupResponse {
-        return apiService.signup(username, password)
+        val signupRequest = SignupRequest(username, password)
+        return apiService.signup(signupRequest)
     }
 
     suspend fun login(username: String, password: String): LoginResponse {

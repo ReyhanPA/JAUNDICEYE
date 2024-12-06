@@ -12,13 +12,10 @@ import com.capstone.jaundiceye.util.ViewModelFactory
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
+    private val binding get() = _binding
     private val viewModel by viewModels<ProfileViewModel> {
         ViewModelFactory.getInstance(requireActivity(), "user")
     }
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?) : View? {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -28,6 +25,9 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.getSession().observe(viewLifecycleOwner) { userModel ->
+            binding?.profileName?.text = userModel.username
+        }
         binding?.btnLogout?.setOnClickListener { viewModel.logout() }
     }
 

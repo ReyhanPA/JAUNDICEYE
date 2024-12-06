@@ -3,13 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        tools:context=".ui.home.HomeFragment">
+        xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
         <!-- Card 1 -->
         <androidx.cardview.widget.CardView
@@ -68,7 +70,7 @@
                     card_view:layout_constraintEnd_toEndOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/button_recommendation"
+                    android:id="@+id/button_home_to_scanner"
                     android:layout_width="152dp"
                     android:layout_height="32dp"
                     android:layout_marginTop="12dp"
@@ -97,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="76dp"
             android:layout_marginHorizontal="32dp"
             card_view:cardCornerRadius="12dp"
             card_view:cardElevation="8dp"

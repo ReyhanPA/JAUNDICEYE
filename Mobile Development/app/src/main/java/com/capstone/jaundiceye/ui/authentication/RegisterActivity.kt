@@ -1,5 +1,7 @@
 package com.capstone.jaundiceye.ui.authentication
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -27,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
-//        playAnimation()
+        playAnimation()
 
         viewModel.isLoading.observe(this) {
             showLoading(it)
@@ -52,6 +54,12 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnSignup.setOnClickListener {
             val username = binding.inputUsername.text.toString()
             val password = binding.inputPassword.text.toString()
+            val confirmPassword = binding.inputKonfirmPassword.text.toString()
+
+            if (password != confirmPassword) {
+                showToast(resources.getString(R.string.confirm_password_not_match))
+                return@setOnClickListener
+            }
 
             viewModel.signup(username, password).observe(this) { signupResponse ->
                 val message = signupResponse.message
@@ -67,43 +75,24 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-//    private fun playAnimation() {
-//        ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_X, -30f, 30f).apply {
-//            duration = 6000
-//            repeatCount = ObjectAnimator.INFINITE
-//            repeatMode = ObjectAnimator.REVERSE
-//        }.start()
-//
-//        val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(100)
-//        val nameTextView =
-//            ObjectAnimator.ofFloat(binding.nameTextView, View.ALPHA, 1f).setDuration(100)
-//        val nameEditTextLayout =
-//            ObjectAnimator.ofFloat(binding.edRegisterNameLayout, View.ALPHA, 1f).setDuration(100)
-//        val emailTextView =
-//            ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(100)
-//        val emailEditTextLayout =
-//            ObjectAnimator.ofFloat(binding.edRegisterEmailLayout, View.ALPHA, 1f).setDuration(100)
-//        val passwordTextView =
-//            ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(100)
-//        val passwordEditTextLayout =
-//            ObjectAnimator.ofFloat(binding.edRegisterPasswordLayout, View.ALPHA, 1f).setDuration(100)
-//        val register = ObjectAnimator.ofFloat(binding.registerButton, View.ALPHA, 1f).setDuration(100)
-//
-//
-//        AnimatorSet().apply {
-//            playSequentially(
-//                title,
-//                nameTextView,
-//                nameEditTextLayout,
-//                emailTextView,
-//                emailEditTextLayout,
-//                passwordTextView,
-//                passwordEditTextLayout,
-//                register
-//            )
-//            startDelay = 100
-//        }.start()
-//    }
+    private fun playAnimation() {
+        val username = ObjectAnimator.ofFloat(binding.etUsername, View.ALPHA, 1f).setDuration(100)
+        val password = ObjectAnimator.ofFloat(binding.etPassword, View.ALPHA, 1f).setDuration(100)
+        val confirmPassword = ObjectAnimator.ofFloat(binding.etKonfirmPassword, View.ALPHA, 1f).setDuration(100)
+        val toLogin = ObjectAnimator.ofFloat(binding.llToLogin, View.ALPHA, 1f).setDuration(100)
+        val btnSignup = ObjectAnimator.ofFloat(binding.btnSignup, View.ALPHA, 1f).setDuration(100)
+
+        AnimatorSet().apply {
+            playSequentially(
+                username,
+                password,
+                confirmPassword,
+                toLogin,
+                btnSignup,
+            )
+            startDelay = 500
+        }.start()
+    }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

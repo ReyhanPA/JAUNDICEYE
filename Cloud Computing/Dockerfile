@@ -1,23 +1,35 @@
-# Use an official Node.js runtime as a parent image
-FROM node:lts-alpine
+# Stage 1: Build the Go binary
+FROM golang:1.20-alpine as builder
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Set the current working directory inside the container
+WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Copy the Go modules manifests to the container
+COPY go.mod go.sum ./
 
-# Install dependencies
-RUN npm install
+# Download dependencies
+RUN go mod download
 
-# Copy the rest of the application code
+# Copy the rest of the application code to the container
 COPY . .
 
-# Copy the .env file
+# Build the Go application
+RUN go build -o main .
+
+# Stage 2: Create the final image
+FROM alpine:latest
+
+# Set the working directory inside the container
+WORKDIR /root/
+
+# Copy the Go binary from the builder stage
+COPY --from=builder /app/main .
+
+# Copy the .env file to the container (if needed)
 COPY .env .env
 
-# Expose the port the app runs on
-EXPOSE 8080
+# Expose the port the app will run on
+EXPOSE 3000
 
-# Define the command to run the app
-CMD ["npm", "run", "dev"]
+# Command to run the app
+CMD ["./main"]

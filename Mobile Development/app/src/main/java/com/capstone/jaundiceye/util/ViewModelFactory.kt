@@ -10,6 +10,7 @@ import com.capstone.jaundiceye.repositories.UserRepository
 import com.capstone.jaundiceye.ui.authentication.AuthenticationViewModel
 import com.capstone.jaundiceye.ui.main.MainViewModel
 import com.capstone.jaundiceye.ui.profile.ProfileViewModel
+import com.capstone.jaundiceye.ui.recommendation.RecommendationViewModel
 
 class ViewModelFactory(private val repository: Repository) : ViewModelProvider.NewInstanceFactory() {
 
@@ -24,6 +25,9 @@ class ViewModelFactory(private val repository: Repository) : ViewModelProvider.N
             }
             modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
                 ProfileViewModel(repository as UserRepository) as T
+            }
+            modelClass.isAssignableFrom(RecommendationViewModel::class.java) -> {
+                RecommendationViewModel(repository as HospitalsRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

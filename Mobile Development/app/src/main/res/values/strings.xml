@@ -86,6 +86,7 @@
     <string name="register_failed_message">Register failed!</string>
     <string name="login_success_message">Login success!</string>
     <string name="login_failed_message">Login failed!</string>
+    <string name="confirm_password_not_match">Kata sandi dan konfirmasi kata sandi tidak cocok!</string>
     <!-- Welcome Text -->
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>

@@ -1,5 +1,6 @@
 package com.capstone.jaundiceye.ui.recommendation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.jaundiceye.data.remote.responses.HospitalsResponseItem
 import com.capstone.jaundiceye.databinding.FragmentRecommendationBinding
+import com.capstone.jaundiceye.ui.handlingsteps.HandlingstepsActivity
 import com.capstone.jaundiceye.util.ViewModelFactory
 
 class RecommendationFragment : Fragment() {
@@ -30,6 +32,10 @@ class RecommendationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding?.buttonRecommendation?.setOnClickListener {
+            val intent = Intent(requireActivity(), HandlingstepsActivity::class.java)
+            startActivity(intent)
+        }
         viewModel.getHospitals()
         setupRecyclerView()
         setupObservers()

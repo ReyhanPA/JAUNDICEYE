@@ -50,7 +50,7 @@
     <!-- Header Text -->
     <string name="header_home_text">JaundicEye.</string>
     <string name="header_recommendation_text">Rekomendasi</string>
-    <string name="header_scanner_text">Scanner</string>
+    <string name="header_scanner_text">Pemindai</string>
     <string name="header_article_text">Artikel</string>
     <string name="header_profile_text">Profil</string>
     <!-- Card Recommendation Default Text -->
@@ -110,4 +110,13 @@
     <string name="btn_signUp">Sign Up</string>
     <string name="login_from_register">Log In</string>
     <string name="signup_from_login">Sign Up</string>
+    <string name="go_to_tab_article">Silakan tekan tab artikel!</string>
+    <!-- History Activity -->
+    <string name="title_history">Soon! Halaman history</string>
+    <string name="header_history_text">Riwayat</string>
+    <string name="subheader_history_text">Lihat riwayat cek anda di sini</string>
+    <!-- Handling Steps Activity -->
+    <string name="title_handlingsteps">Soon! Halaman langkah penanganan</string>
+    <string name="header_handlingsteps_text">Penanganan</string>
+    <string name="subheader_handlingsteps_text">Lihat langkah penanganan di sini</string>
 </resources>

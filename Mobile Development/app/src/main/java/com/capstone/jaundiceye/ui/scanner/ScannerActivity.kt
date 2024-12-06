@@ -34,7 +34,8 @@ class ScannerActivity : AppCompatActivity() {
         binding.apply {
             buttonScannerGallery.setOnClickListener { startGallery() }
             buttonScannerCamera.setOnClickListener { startCamera() }
-//            buttonScannerSave.setOnClickListener { save() }
+            buttonScannerUpload.setOnClickListener { upload() }
+            buttonScannerSave.setOnClickListener { save() }
             toolbarBack.setOnClickListener { finish() }
         }
     }
@@ -87,6 +88,14 @@ class ScannerActivity : AppCompatActivity() {
         currentImageUri?.let {
             binding.imgPreview.setImageURI(it)
         }
+    }
+
+    private fun upload() {
+        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun save() {
+        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

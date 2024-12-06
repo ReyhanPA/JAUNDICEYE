@@ -56,12 +56,13 @@
     <!-- Card Recommendation Default Text -->
     <string name="default_hospital_name">Rumah Sakit Default</string>
     <string name="default_doctor_name">Dokter default</string>
-    <string name="default_hospital_address">Jalan Mawar IX No. 123, Helvetia Tengah, Kota Medan, Sumatera Utara</string>
+    <string name="default_hospital_address">%s</string>
     <string name="default_text_button_recommendation">Lihat</string>
+    <string name="default_address_format">%1$s, %2$s</string>
     <!-- Content Description Text -->
     <string name="description_toolbar_image">Toolbar image</string>
     <string name="description_fab_scanner">Scanner</string>
-    <string name="description_image_preview">IMage preview</string>
+    <string name="description_image_preview">Image preview</string>
     <string name="description_back">Kembali</string>
     <string name="description_splashscreen">Splashscreen</string>
     <!-- Fragment Recommendation -->

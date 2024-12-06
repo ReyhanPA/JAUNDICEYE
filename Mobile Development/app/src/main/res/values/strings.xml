@@ -23,8 +23,8 @@
     <string name="cekPenyakitKuning">Cek Penyakit Kuning</string>
     <string name="subCekPenyakitKuning">Cek penyakit kuning kamu dengan AI</string>
     <string name="btnCekPenyakitKuning">Coba Sekarang  ▶</string>
-    <string name="descCekPenyakitKuning">"Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera\n  • Mendapatkan hasil analisis dari AI"</string>
-    <string name="descArtikel">"Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan\n  • Filter artikel sesuai kemauan kamu"</string>
+    <string name="descCekPenyakitKuning">Dengan fitur ini kamu dapat melakukan\n  • Cek penyakit kuning dengan kamera dan galeri\n  • Mendapatkan hasil analisis dari AI</string>
+    <string name="descArtikel">Dengan fitur ini kamu dapat melakukan\n  • Membaca artikel mengenai kesehatan</string>
     <string name="subRiwayat">Anda bisa melihat semua riwayat cek Anda</string>
     <string name="riwayat">Riwayat Cek Penyakit Kuning</string>
     <string name="btnRiwayat">Lihat Sekarang  ▶</string>
@@ -86,6 +86,7 @@
     <string name="register_failed_message">Register failed!</string>
     <string name="login_success_message">Login success!</string>
     <string name="login_failed_message">Login failed!</string>
+    <string name="confirm_password_not_match">Kata sandi dan konfirmasi kata sandi tidak cocok!</string>
     <!-- Welcome Text -->
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
@@ -95,6 +96,7 @@
     <!-- Profile Fragment -->
     <string name="hint_username">Username</string>
     <string name="hint_kata_sandi">Kata Sandi</string>
+    <!-- Other Text -->
     <string name="belum_punya_akun_sign_up">Belum punya akun?</string>
     <string name="sudah_punya_akun_log_in">Sudah punya akun?</string>
     <string name="btn_log_in">Log In</string>

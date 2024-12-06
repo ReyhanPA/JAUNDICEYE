@@ -1,5 +1,7 @@
 package com.capstone.jaundiceye.ui.authentication
 
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -28,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
         setupAction()
-//        playAnimation()
+        playAnimation()
 
         viewModel.isLoading.observe(this) {
             showLoading(it)
@@ -70,39 +72,22 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-//    private fun playAnimation() {
-//        ObjectAnimator.ofFloat(binding.imageView, View.TRANSLATION_X, -30f, 30f).apply {
-//            duration = 6000
-//            repeatCount = ObjectAnimator.INFINITE
-//            repeatMode = ObjectAnimator.REVERSE
-//        }.start()
-//
-//        val title = ObjectAnimator.ofFloat(binding.titleTextView, View.ALPHA, 1f).setDuration(100)
-//        val message =
-//            ObjectAnimator.ofFloat(binding.messageTextView, View.ALPHA, 1f).setDuration(100)
-//        val emailTextView =
-//            ObjectAnimator.ofFloat(binding.emailTextView, View.ALPHA, 1f).setDuration(100)
-//        val emailEditTextLayout =
-//            ObjectAnimator.ofFloat(binding.edLoginEmailLayout, View.ALPHA, 1f).setDuration(100)
-//        val passwordTextView =
-//            ObjectAnimator.ofFloat(binding.passwordTextView, View.ALPHA, 1f).setDuration(100)
-//        val passwordEditTextLayout =
-//            ObjectAnimator.ofFloat(binding.edLoginPasswordLayout, View.ALPHA, 1f).setDuration(100)
-//        val login = ObjectAnimator.ofFloat(binding.loginButton, View.ALPHA, 1f).setDuration(100)
-//
-//        AnimatorSet().apply {
-//            playSequentially(
-//                title,
-//                message,
-//                emailTextView,
-//                emailEditTextLayout,
-//                passwordTextView,
-//                passwordEditTextLayout,
-//                login
-//            )
-//            startDelay = 100
-//        }.start()
-//    }
+    private fun playAnimation() {
+        val username = ObjectAnimator.ofFloat(binding.etUsername, View.ALPHA, 1f).setDuration(100)
+        val password = ObjectAnimator.ofFloat(binding.etPassword, View.ALPHA, 1f).setDuration(100)
+        val toSignup = ObjectAnimator.ofFloat(binding.llToSignup, View.ALPHA, 1f).setDuration(100)
+        val btnLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(100)
+
+        AnimatorSet().apply {
+            playSequentially(
+                username,
+                password,
+                toSignup,
+                btnLogin,
+            )
+            startDelay = 500
+        }.start()
+    }
 
     private fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

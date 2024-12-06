@@ -46,12 +46,14 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:startIconDrawable="@drawable/ic_user"
             app:boxBackgroundMode="none"
             app:layout_constraintTop_toBottomOf="@id/tvSignUpTitle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:hintTextColor="@color/deep_blue">
+            app:hintTextColor="@color/deep_blue"
+            tools:alpha="100">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputUsername"
@@ -75,13 +77,15 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:startIconDrawable="@drawable/ic_password"
             app:endIconMode="password_toggle"
             app:boxBackgroundMode="none"
             app:layout_constraintTop_toBottomOf="@id/etUsername"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:hintTextColor="@color/deep_blue">
+            app:hintTextColor="@color/deep_blue"
+            tools:alpha="100">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPassword"
@@ -105,13 +109,15 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
+            android:alpha="0"
             app:startIconDrawable="@drawable/ic_password"
             app:endIconMode="password_toggle"
             app:boxBackgroundMode="none"
             app:layout_constraintTop_toBottomOf="@id/etPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:hintTextColor="@color/deep_blue">
+            app:hintTextColor="@color/deep_blue"
+            tools:alpha="100">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputKonfirmPassword"
@@ -136,9 +142,11 @@
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:orientation="horizontal"
+            android:alpha="0"
             app:layout_constraintTop_toBottomOf="@id/etKonfirmPassword"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:alpha="100">
 
             <TextView
                 android:id="@+id/tvSudahPunyaAkun"
@@ -182,9 +190,11 @@
             android:textSize="16sp"
             android:fontFamily="@font/manrope_bold"
             android:textColor="@android:color/white"
+            android:alpha="0"
             app:layout_constraintTop_toBottomOf="@id/llToLogin"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:alpha="100"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar

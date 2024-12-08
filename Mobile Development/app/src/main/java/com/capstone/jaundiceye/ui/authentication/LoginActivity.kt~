@@ -12,19 +12,20 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.jaundiceye.R
-import com.capstone.jaundiceye.databinding.ActivityRegisterBinding
-import com.capstone.jaundiceye.ui.welcome.WelcomeActivity
+import com.capstone.jaundiceye.data.pref.UserModel
+import com.capstone.jaundiceye.databinding.ActivityLoginBinding
+import com.capstone.jaundiceye.ui.main.MainActivity
 import com.capstone.jaundiceye.util.ViewModelFactory
 
-class RegisterActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityRegisterBinding
+class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityLoginBinding
     private val viewModel by viewModels<AuthenticationViewModel> {
         ViewModelFactory.getInstance(this, "user")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityRegisterBinding.inflate(layoutInflater)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupView()
@@ -46,31 +47,26 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.toolbarBack.setOnClickListener { finish() }
-        binding.tvLogin.setOnClickListener {
-            val intent = Intent(this@RegisterActivity, LoginActivity::class.java)
+        binding.tvSignup.setOnClickListener {
+            val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
             finish()
         }
-        binding.btnSignup.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             val username = binding.inputUsername.text.toString()
             val password = binding.inputPassword.text.toString()
-            val confirmPassword = binding.inputKonfirmPassword.text.toString()
 
-            if (password != confirmPassword) {
-                showToast(resources.getString(R.string.confirm_password_not_match))
-                return@setOnClickListener
-            }
-
-            viewModel.signup(username, password).observe(this) { signupResponse ->
-                val message = signupResponse.message
-                if (signupResponse.success == true) {
-                    showToast(message ?: resources.getString(R.string.register_success_message))
-                    val intent = Intent(this@RegisterActivity, WelcomeActivity::class.java)
+            viewModel.login(username, password).observe(this) { loginResponse ->
+                val message = loginResponse.message
+                if (loginResponse.success == true) {
+                    viewModel.saveSession(UserModel(username, loginResponse.token.toString()))
+                    showToast(message ?: resources.getString(R.string.login_success_message))
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     startActivity(intent)
                     finish()
                 } else {
-                    showToast(message ?: resources.getString(R.string.register_failed_message))
+                    showToast(message ?: resources.getString(R.string.login_failed_message))
                 }
             }
         }
@@ -79,17 +75,15 @@ class RegisterActivity : AppCompatActivity() {
     private fun playAnimation() {
         val username = ObjectAnimator.ofFloat(binding.etUsername, View.ALPHA, 1f).setDuration(100)
         val password = ObjectAnimator.ofFloat(binding.etPassword, View.ALPHA, 1f).setDuration(100)
-        val confirmPassword = ObjectAnimator.ofFloat(binding.etKonfirmPassword, View.ALPHA, 1f).setDuration(100)
-        val toLogin = ObjectAnimator.ofFloat(binding.llToLogin, View.ALPHA, 1f).setDuration(100)
-        val btnSignup = ObjectAnimator.ofFloat(binding.btnSignup, View.ALPHA, 1f).setDuration(100)
+        val toSignup = ObjectAnimator.ofFloat(binding.llToSignup, View.ALPHA, 1f).setDuration(100)
+        val btnLogin = ObjectAnimator.ofFloat(binding.btnLogin, View.ALPHA, 1f).setDuration(100)
 
         AnimatorSet().apply {
             playSequentially(
                 username,
                 password,
-                confirmPassword,
-                toLogin,
-                btnSignup,
+                toSignup,
+                btnLogin,
             )
             startDelay = 500
         }.start()
@@ -101,6 +95,6 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun showLoading(state: Boolean) {
         binding.progressBar.visibility = if (state) View.VISIBLE else View.GONE
-        binding.btnSignup.isEnabled = !state
+        binding.btnLogin.isEnabled = !state
     }
 }

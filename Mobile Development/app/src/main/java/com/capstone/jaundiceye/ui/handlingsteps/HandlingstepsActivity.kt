@@ -2,6 +2,7 @@ package com.capstone.jaundiceye.ui.handlingsteps
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.HtmlCompat
 import com.capstone.jaundiceye.R
 import com.capstone.jaundiceye.databinding.ActivityHandlingstepsBinding
 
@@ -19,5 +20,9 @@ class HandlingstepsActivity : AppCompatActivity() {
         binding.apply {
             toolbarBack.setOnClickListener { finish() }
         }
+        binding.desc.text = HtmlCompat.fromHtml(
+            getString(R.string.handlingsteps_text),
+            HtmlCompat.FROM_HTML_MODE_LEGACY
+        )
     }
 }

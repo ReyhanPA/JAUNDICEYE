@@ -115,8 +115,45 @@
     <string name="title_history">Soon! Halaman history</string>
     <string name="header_history_text">Riwayat</string>
     <string name="subheader_history_text">Lihat riwayat cek anda di sini</string>
+    <string name="jaundice_detected">Terdeteksi Jaundice</string>
+    <string name="jaundice_detected_advice">Segera konsultasi dengan dokter atau rumah sakit terdekat</string>
+    <string name="jaundice_timestamp">07/12/2024 17:25:30</string>
     <!-- Handling Steps Activity -->
     <string name="title_handlingsteps">Soon! Halaman langkah penanganan</string>
     <string name="header_handlingsteps_text">Penanganan</string>
     <string name="subheader_handlingsteps_text">Lihat langkah penanganan di sini</string>
+    <string name="handlingsteps_text">
+        <![CDATA[
+        <b>Langkah Penanganan Penyakit Jaundice</b><br/><br/>
+
+        <b>1. Identifikasi Gejala Awal</b><br/>
+        • Perhatikan tanda-tanda seperti kulit dan mata menguning, urine gelap, atau tinja pucat.<br/>
+        • Jika gejala semakin parah (misalnya lemas atau nyeri perut hebat), segera konsultasikan ke dokter.<br/><br/>
+
+        <b>2. Konsultasi dengan Tenaga Medis</b><br/>
+        • Buat janji dengan dokter untuk pemeriksaan lebih lanjut.<br/>
+        • Bawa hasil tes atau riwayat kesehatan yang relevan untuk membantu diagnosis.<br/><br/>
+
+        <b>3. Penanganan Awal di Rumah</b><br/>
+        • <b>Hidrasi yang Cukup</b>: Minum air putih untuk membantu proses detoksifikasi tubuh.<br/>
+        • <b>Pola Makan Sehat</b>: Konsumsi makanan rendah lemak dan tinggi serat, seperti buah-buahan, sayuran, dan biji-bijian.<br/>
+        • <b>Hindari Alkohol</b>: Alkohol dapat memperburuk kerusakan hati.<br/><br/>
+
+        <b>4. Pengobatan Sesuai Penyebab</b><br/>
+        • Ikuti resep dokter dan petunjuk medis untuk mengatasi kondisi yang mendasari.<br/>
+        • Jangan menghentikan obat tanpa rekomendasi dokter, meskipun gejala membaik.<br/><br/>
+
+        <b>5. Pantau Perkembangan Kondisi</b><br/>
+        • Lakukan kontrol kesehatan secara rutin untuk mengevaluasi perbaikan kondisi.<br/>
+        • Gunakan fitur di aplikasi ini untuk mencari referensi rumah sakit yang bisa dirujuk.<br/><br/>
+
+        <b>6. Perhatikan Tanda Bahaya</b><br/>
+        • Jika mengalami demam tinggi, muntah hebat, atau kebingungan, segera ke fasilitas medis terdekat.<br/><br/>
+
+        <b>7. Tips Pencegahan untuk Masa Depan</b><br/>
+        • Hindari makanan atau minuman yang tidak higienis untuk mencegah infeksi.<br/>
+        • Lakukan vaksinasi hepatitis jika dianjurkan.<br/>
+        • Terapkan pola hidup sehat untuk menjaga kesehatan hati.<br/>
+    ]]>
+    </string>
 </resources>

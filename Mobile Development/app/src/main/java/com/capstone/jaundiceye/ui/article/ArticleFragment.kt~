@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.capstone.jaundiceye.R
 import com.capstone.jaundiceye.data.remote.responses.ArticlesResponseItem
 import com.capstone.jaundiceye.databinding.FragmentArticleBinding
 import com.capstone.jaundiceye.util.ViewModelFactory
@@ -53,7 +54,12 @@ class ArticleFragment : Fragment() {
         viewModel.errorMessage.observe(viewLifecycleOwner) { event ->
             event.getContentIfNotHandled()?.let { message ->
                 Log.d("ArticleFragment", "Error: $message")
-                showError(message)
+                if (message == "Error: HTTP 403") {
+                    showError(resources.getString(R.string.error_403))
+                    viewModel.logout()
+                } else {
+                    showError(message)
+                }
             }
         }
     }

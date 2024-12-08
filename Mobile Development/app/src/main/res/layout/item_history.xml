@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:maxLines="2"
+            android:fontFamily="@font/manrope_semibold"
             android:text="@string/jaundice_timestamp"
             android:textColor="@color/french_blue"
             android:textSize="14sp"
@@ -57,20 +58,6 @@
             card_view:layout_constraintEnd_toEndOf="@+id/text_history_timestamp"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/text_history_timestamp" />
-
-<!--        <ImageView-->
-<!--            android:id="@+id/image_hospital"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="140dp"-->
-<!--            android:layout_marginTop="12dp"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:clipToOutline="true"-->
-<!--            android:contentDescription="@string/description_image_preview"-->
-<!--            android:background="@drawable/image_preview_background"-->
-<!--            card_view:layout_constraintTop_toBottomOf="@id/text_hospital_address"-->
-<!--            card_view:layout_constraintStart_toStartOf="parent"-->
-<!--            card_view:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:srcCompat="@drawable/ic_preview"/>-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

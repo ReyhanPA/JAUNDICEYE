@@ -32,11 +32,7 @@ class ArticleViewModel(private val repository: ArticlesRepository) : ViewModel()
                 val response = repository.getArticles()
                 _articles.postValue(response)
             } catch (e: Exception) {
-                if (e.message == "HTTP 403") {
-                    _errorMessage.postValue(Event("Sesi berakhir! Silakan login kembali"))
-                } else {
-                    _errorMessage.postValue(Event("Error: ${e.message ?: "Unknown error"}"))
-                }
+                _errorMessage.postValue(Event("Error: ${e.message ?: "Unknown error"}"))
             } finally {
                 _isLoading.value = false
             }

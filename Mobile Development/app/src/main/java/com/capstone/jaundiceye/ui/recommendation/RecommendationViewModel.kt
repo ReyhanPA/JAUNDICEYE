@@ -32,7 +32,11 @@ class RecommendationViewModel(private val repository: HospitalsRepository) : Vie
                 val response = repository.getHospitals()
                 _hospitals.postValue(response)
             } catch (e: Exception) {
-                _errorMessage.postValue(Event("Error: ${e.message ?: "Unknown error"}"))
+                if (e.message == "HTTP 403") {
+                    _errorMessage.postValue(Event("Sesi berakhir! Silakan login kembali"))
+                } else {
+                    _errorMessage.postValue(Event("Error: ${e.message ?: "Unknown error"}"))
+                }
             } finally {
                 _isLoading.value = false
             }

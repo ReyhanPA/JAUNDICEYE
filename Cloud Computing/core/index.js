@@ -6,6 +6,7 @@ const db = require("./database/supabase");
 const articleApi = require("../components/article/article-api");
 const hospitalApi = require("../components/hospital/hospital-api");
 const userApi = require("../components/user/user-api");
+const jaundicedApi = require("../components/jaundiced-model/jaundiced-api");
 const { authMiddleware } = require("../middlewares/auth-middleware");
 
 class Application {
@@ -23,6 +24,7 @@ class Application {
         this.express.use("/api/users", userApi);
         this.express.use("/api/articles", authMiddleware, articleApi);
         this.express.use("/api/hospitals", authMiddleware, hospitalApi);
+        this.express.use("/api/jaundiced-model", jaundicedApi);
 
         this.express.get("/api", (req, res) => {
             res.send("Welcome to JAUNDICE Backend Web Services!");

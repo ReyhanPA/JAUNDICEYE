@@ -24,7 +24,7 @@ class Application {
         this.express.use("/api/users", userApi);
         this.express.use("/api/articles", authMiddleware, articleApi);
         this.express.use("/api/hospitals", authMiddleware, hospitalApi);
-        this.express.use("/api/jaundiced-model", jaundicedApi);
+        this.express.use("/api/jaundiced-model", authMiddleware, jaundicedApi);
 
         this.express.get("/api", (req, res) => {
             res.send("Welcome to JAUNDICE Backend Web Services!");

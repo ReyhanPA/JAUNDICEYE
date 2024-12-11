@@ -9,7 +9,7 @@ import com.capstone.jaundiceye.data.local.entity.HistoryEntity
 
 @Dao
 interface HistoryDao {
-    @Query("SELECT * FROM history WHERE username = :username ORDER BY inference_time DESC")
+    @Query("SELECT * FROM history WHERE username = :username")
     fun getAllHistory(username: String): LiveData<List<HistoryEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)

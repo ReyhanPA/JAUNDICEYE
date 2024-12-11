@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
@@ -161,7 +162,7 @@ class ScannerActivity : AppCompatActivity() {
             when (result) {
                 getString(R.string.result_positive) -> {
                     textResult.text = getString(R.string.result_positive_text)
-                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.green))
+                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.green)))
                 }
                 getString(R.string.result_negative) -> {
                     textResult.text = getString(R.string.result_negative_text)

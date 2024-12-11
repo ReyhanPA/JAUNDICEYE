@@ -6,6 +6,7 @@ import com.capstone.jaundiceye.data.pref.dataStore
 import com.capstone.jaundiceye.data.remote.retrofit.ApiConfig
 import com.capstone.jaundiceye.repositories.ArticlesRepository
 import com.capstone.jaundiceye.repositories.HospitalsRepository
+import com.capstone.jaundiceye.repositories.ScannerRepository
 import com.capstone.jaundiceye.repositories.UserRepository
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -28,5 +29,11 @@ object Injection {
         val user = runBlocking { pref.getSession().first() }
         val apiService = ApiConfig.getApiService(user.token)
         return ArticlesRepository.getInstance(pref, apiService)
+    }
+    fun provideScannerRepository(context: Context): ScannerRepository {
+        val pref = UserPreference.getInstance(context.dataStore)
+        val user = runBlocking { pref.getSession().first() }
+        val apiService = ApiConfig.getApiService(user.token)
+        return ScannerRepository.getInstance(pref, apiService)
     }
 }

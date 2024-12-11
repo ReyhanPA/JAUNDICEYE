@@ -165,7 +165,6 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
             android:textAllCaps="false"
-            android:backgroundTint="@color/button_color"
             android:background="@drawable/button_blue"
             android:text="@string/btn_log_in"
             android:textSize="16sp"

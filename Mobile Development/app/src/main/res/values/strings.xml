@@ -88,6 +88,9 @@
     <string name="login_failed_message">Login failed!</string>
     <string name="confirm_password_not_match">Kata sandi dan konfirmasi kata sandi tidak cocok!</string>
     <string name="error_403">Sesi berakhir, silakan login kembali</string>
+    <string name="cropping_failed">Gagal mengedit gambar!</string>
+    <string name="camera_failed">Gagal mengambil gambar!</string>
+    <string name="empty_image_warning">Gambar masih kosong!</string>
     <!-- Welcome Text -->
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>
@@ -157,4 +160,11 @@
         • Terapkan pola hidup sehat untuk menjaga kesehatan hati.<br/>
     ]]>
     </string>
+    <!-- Scanner Activity Result -->
+    <string name="unknown_error">Error yang tidak diketahui!</string>
+    <string name="result_positive">jaundiced</string>
+    <string name="result_positive_text">Positif</string>
+    <string name="result_negative">not jaundiced</string>
+    <string name="result_negative_text">Negatif</string>
+    <string name="result_unknown_text">Terjadi Kesalahan</string>
 </resources>

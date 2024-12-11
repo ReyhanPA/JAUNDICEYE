@@ -9,7 +9,7 @@ class JaundicedService {
 
     // Load the model
     async loadModel() {
-        const modelPath = path.resolve(__dirname, './final_model/final_model.json');
+        const modelPath = path.resolve(__dirname, './jaundiced/model.json');
         this.model = await tf.loadLayersModel(`file://${modelPath}`);
         console.log('Model loaded successfully');
     }
@@ -22,16 +22,28 @@ class JaundicedService {
 
         // Preprocess the image
         const processedImage = await sharp(imageBuffer)
-            .resize(224, 224) // Resize to model's expected input size
+            .resize(100, 100)
             .toBuffer();
-        const tensor = tf.node.decodeImage(processedImage)
+        const tensorImage = tf.node.decodeImage(processedImage)
             .expandDims(0)
-            .div(tf.scalar(255)); // Normalize
+            .div(tf.scalar(255));
 
-        // Run the prediction
-        const prediction = this.model.predict(tensor);
+        // Create color_input (example: calculate average RGB)
+        const colorTensor = this.calculateAverageRGB(imageBuffer);
+
+        const prediction = this.model.predict([tensorImage, colorTensor]);
         const result = prediction.dataSync();
         return result[0] > 0.5 ? 'jaundiced' : 'not jaundiced';
+    }
+
+    calculateAverageRGB(imageBuffer) {
+        const imageTensor = tf.node.decodeImage(imageBuffer);
+        const [height, width, channels] = imageTensor.shape;
+
+        // Calculate the average RGB values (mean across height and width)
+        const meanRGB = tf.mean(imageTensor, [0, 1]).div(tf.scalar(255)); 
+
+        return tf.reshape(meanRGB, [1, 3]);
     }
 }
 

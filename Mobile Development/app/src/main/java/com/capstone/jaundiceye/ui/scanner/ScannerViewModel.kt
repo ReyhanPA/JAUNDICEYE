@@ -3,8 +3,12 @@ package com.capstone.jaundiceye.ui.scanner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.capstone.jaundiceye.data.local.entity.HistoryEntity
+import com.capstone.jaundiceye.data.pref.UserModel
 import com.capstone.jaundiceye.data.remote.responses.ScannerResponse
+import com.capstone.jaundiceye.repositories.HistoryRepository
 import com.capstone.jaundiceye.repositories.ScannerRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
@@ -14,7 +18,10 @@ import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.HttpException
 import java.io.File
 
-class ScannerViewModel(private val repository: ScannerRepository) : ViewModel() {
+class ScannerViewModel(
+    private val repository: ScannerRepository,
+    private val historyRepository: HistoryRepository
+) : ViewModel() {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -41,5 +48,15 @@ class ScannerViewModel(private val repository: ScannerRepository) : ViewModel() 
             _isLoading.value = false
         }
         return liveDataResponse
+    }
+
+    fun insertHistory(history: HistoryEntity) {
+        viewModelScope.launch {
+            historyRepository.insertHistory(history)
+        }
+    }
+
+    fun getSession(): LiveData<UserModel> {
+        return repository.getSession().asLiveData()
     }
 }

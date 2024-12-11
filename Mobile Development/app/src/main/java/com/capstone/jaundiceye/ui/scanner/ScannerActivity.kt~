@@ -5,7 +5,6 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
@@ -13,13 +12,16 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.capstone.jaundiceye.R
+import com.capstone.jaundiceye.data.local.entity.HistoryEntity
 import com.capstone.jaundiceye.databinding.ActivityScannerBinding
 import com.capstone.jaundiceye.util.ViewModelFactory
 import com.capstone.jaundiceye.util.getImageUri
 import com.capstone.jaundiceye.util.reduceFileImage
 import com.capstone.jaundiceye.util.uriToFile
 import com.yalantis.ucrop.UCrop
+import kotlinx.coroutines.launch
 import java.io.File
 
 class ScannerActivity : AppCompatActivity() {
@@ -147,7 +149,20 @@ class ScannerActivity : AppCompatActivity() {
     }
 
     private fun save() {
-        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
+        viewModel.getSession().observe(this) { userModel ->
+            val result = HistoryEntity().apply {
+                username = userModel.username
+                imageUri = currentImageUri
+                result = binding.textResult.text.toString()
+                inferenceTime = System.currentTimeMillis().toString()
+            }
+
+            lifecycleScope.launch {
+                viewModel.insertHistory(result)
+            }
+
+            showToast(getString(R.string.success_save_history))
+        }
     }
 
     private fun showToast(message: String) {
@@ -162,7 +177,7 @@ class ScannerActivity : AppCompatActivity() {
             when (result) {
                 getString(R.string.result_positive) -> {
                     textResult.text = getString(R.string.result_positive_text)
-                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.green)))
+                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.green))
                 }
                 getString(R.string.result_negative) -> {
                     textResult.text = getString(R.string.result_negative_text)
@@ -170,6 +185,7 @@ class ScannerActivity : AppCompatActivity() {
                 }
                 else -> {
                     textResult.text = getString(R.string.result_unknown_text)
+                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.gray))
                 }
             }
         }

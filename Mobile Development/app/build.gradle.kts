@@ -16,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "BASE_URL", "\"https://jaundiceye-378954105631.asia-southeast2.run.app/api/\"")
+        buildConfigField("String", "BASE_URL", "\"https://jaundiceyebackend-597611405472.asia-southeast2.run.app/api/\"")
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -98,4 +98,7 @@ dependencies {
     // Coroutine
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.jetbrains.kotlinx.coroutines.android)
+
+    // Ucrop
+    implementation(libs.ucrop)
 }

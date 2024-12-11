@@ -39,6 +39,7 @@ object Injection {
     }
     fun provideHistoryRepository(context: Context): HistoryRepository {
         val userPreference = UserPreference.getInstance(context.dataStore)
+        val username = runBlocking { userPreference.getSession().first().username }
         return HistoryRepository(context.applicationContext, userPreference)
     }
 }

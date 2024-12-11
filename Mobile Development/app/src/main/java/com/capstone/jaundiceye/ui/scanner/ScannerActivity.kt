@@ -12,14 +12,20 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.capstone.jaundiceye.R
+import com.capstone.jaundiceye.data.local.entity.HistoryEntity
 import com.capstone.jaundiceye.databinding.ActivityScannerBinding
 import com.capstone.jaundiceye.util.ViewModelFactory
 import com.capstone.jaundiceye.util.getImageUri
 import com.capstone.jaundiceye.util.reduceFileImage
 import com.capstone.jaundiceye.util.uriToFile
 import com.yalantis.ucrop.UCrop
+import kotlinx.coroutines.launch
 import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ScannerActivity : AppCompatActivity() {
 
@@ -146,7 +152,24 @@ class ScannerActivity : AppCompatActivity() {
     }
 
     private fun save() {
-        Toast.makeText(this, "Not implemented yet", Toast.LENGTH_SHORT).show()
+        val currentTimeMillis = System.currentTimeMillis()
+        val sdf = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault())
+        val readableTime = sdf.format(Date(currentTimeMillis))
+
+        viewModel.getSession().observe(this) { userModel ->
+            val result = HistoryEntity().apply {
+                username = userModel.username
+                imageUri = currentImageUri
+                result = binding.textResult.text.toString()
+                inferenceTime = readableTime
+            }
+
+            lifecycleScope.launch {
+                viewModel.insertHistory(result)
+            }
+
+            showToast(getString(R.string.success_save_history))
+        }
     }
 
     private fun showToast(message: String) {
@@ -169,6 +192,7 @@ class ScannerActivity : AppCompatActivity() {
                 }
                 else -> {
                     textResult.text = getString(R.string.result_unknown_text)
+                    textResult.setTextColor(ContextCompat.getColor(this@ScannerActivity, R.color.gray))
                 }
             }
         }

@@ -92,7 +92,6 @@
     <string name="cropping_failed">Gagal mengedit gambar!</string>
     <string name="camera_failed">Gagal mengambil gambar!</string>
     <string name="empty_image_warning">Gambar masih kosong!</string>
-    <string name="success_save_history">Berhasil menyimpan riwayat!</string>
     <!-- Welcome Text -->
     <string name="welcome_title">JaundicEye.</string>
     <string name="welcome_description">Membantu Anda mendeteksi penyakit kuning dengan teknologi AI melalui analisis mata</string>

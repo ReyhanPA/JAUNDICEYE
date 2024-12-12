@@ -128,6 +128,6 @@ cd '.\Mobile Development\'
 ## Installation (Other Way)
 
 1. Download file APK
-[JAUNDICEYE APK](https://drive.google.com/file/d/1UntUQoH44A9Nuh92lCqyFaBia13cNB8H/view?usp=sharing)
+[JAUNDICEYE APK](https://drive.google.com/file/d/1Y8QTJB7n-i1nuyHOzN5sXHm_VctAa2Lq/view?usp=sharing)
 
-2. Install that file in your mobile phone and enjoy!
+1. Install that file in your mobile phone and enjoy!

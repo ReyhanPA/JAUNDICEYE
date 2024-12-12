@@ -5,6 +5,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.os.SystemClock
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
@@ -141,7 +142,8 @@ class ScannerActivity : AppCompatActivity() {
 
             viewModel.uploadImage(imageFile).observe(this) { result ->
                 if (result != null) {
-                    val uploadResult = result.result ?: resources.getString(R.string.unknown_error)
+                    val uploadResult = result.result?.label ?: resources.getString(R.string.unknown_error)
+                    Log.d("ScannerActivity", "Upload result: $uploadResult")
                     showResult(uploadResult)
                 } else {
                     showToast(getString(R.string.unknown_error))

@@ -33,7 +33,10 @@ class JaundicedService {
 
         const prediction = this.model.predict([tensorImage, colorTensor]);
         const result = prediction.dataSync();
-        return result[0] > 0.5 ? 'jaundiced' : 'not jaundiced';
+        const probability = result[0]; 
+        const label = probability > 0.5 ? 'jaundiced' : 'not jaundiced';
+
+        return { label, probability };
     }
 
     calculateAverageRGB(imageBuffer) {

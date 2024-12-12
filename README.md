@@ -98,6 +98,10 @@ JAUNDICEYE is an AI-powered mobile health application designed to enable early d
 <p align="center">
   <img src="Assets/profile.png" width="200">
   <img src="Assets/scanner.jpg" width="200">
+  <img src="Assets/handlingsteps.png" width="200">
+</p>
+
+<p align="center">
   <img src="Assets/history.jpg" width="200">
 </p>
 
